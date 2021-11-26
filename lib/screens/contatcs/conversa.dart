@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whats_app_flutter/models/chat_model.dart';
+import 'package:whats_app_flutter/models/user_model.dart';
+
 
 
 const colorWpp = Color(0xFF075F56);
@@ -17,25 +19,111 @@ class ConversaScreen extends StatelessWidget {
         backgroundColor: colorWpp,
         leading: InkWell(
           onTap: (){ Navigator.pop(context);},
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              const Icon(Icons.arrow_back, size: 10,),
-
-                CircleAvatar(
+          child: Center(
+            child: Row(
+              children: [
+                const Icon(Icons.arrow_back, size: 14,),
+                  CircleAvatar(
                   radius: 21,
-                backgroundImage: NetworkImage(contato.perfilUrl),
-              ),
-            ],
+                  backgroundImage: NetworkImage(contato.perfilUrl),
+                ),
+              ],
+            ),
           ),),
-        title: Text(contato.nome),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(contato.nome),
+            Text(contato.horario, style: const TextStyle(fontSize: 12, color: Colors.grey),),
+          ],
+
+        ),
         actions: [
           IconButton(icon: const Icon(Icons.video_camera_front_sharp), onPressed: (){},),
           IconButton(icon: const Icon(Icons.call), onPressed: (){},),
           
-          IconButton(icon: const Icon(Icons.more_vert), onPressed: (){},),
+          PopupMenuButton(
+           itemBuilder: (context) => [
+             const PopupMenuItem(child: Text("Ver contato")),
+             const PopupMenuItem(child: Text("Mídia, links e docs")),
+             const PopupMenuItem(child: Text("Pesquisar")),
+             const PopupMenuItem(child: Text("Silenciar notificações")),
+             const PopupMenuItem(child: Text("Papel de parede")),
+             const PopupMenuItem(child: Text("Mais")),
+           ], 
+          )
         ],
+
       ),
+      
+      
+
+      body: Stack(
+        
+        children: [
+
+          Image.network(userModel.backgroundUrl, fit: BoxFit.cover,height: MediaQuery.of(context).size.height,width: MediaQuery.of(context).size.width,),
+
+          Padding(
+            padding: const EdgeInsets.only(top: 690, bottom: 4),
+            child: Row(
+
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+              children: [
+                 Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.grey,
+                      ),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(90)
+                    ),
+                    height: 60,
+                    width: 410,
+                    child: Row(
+                      children: const [
+                        Padding(
+                          padding: EdgeInsets.all(12),
+                          child: Icon(Icons.emoji_emotions_outlined, size: 28,),
+                        ),
+
+                        Padding(
+                          padding: EdgeInsets.only(right: 2),
+                          child: Text("  Mensagem", style: TextStyle(color: Colors.grey, fontSize: 15),),
+                        ),
+
+                        Padding(padding: EdgeInsets.only(left: 190),
+                        child: Icon(Icons.file_copy_outlined, size: 28,),
+                        ),
+
+                        Padding(padding: EdgeInsets.all(10),
+                        child: Icon(Icons.camera_alt_outlined, size: 28,),
+                        ),
+                      ],
+                    )
+                  ),
+
+                  Container(
+                    width: 60,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: colorWpp,
+                      borderRadius: BorderRadius.circular(90)
+                    ),
+                    child: const Center(
+                      child: Icon(Icons.mic, color: Colors.white, size: 30,),
+                    ),
+                  )
+                
+              ],
+            ),
+          ),
+        ],
+      )
+
+
     );
   }
 }

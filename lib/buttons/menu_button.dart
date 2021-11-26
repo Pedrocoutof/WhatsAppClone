@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:whats_app_flutter/screens/configura%C3%A7%C3%B5es/config_scree.dart';
 
 class MenuButton extends StatelessWidget {
   const MenuButton({ Key? key }) : super(key: key);
 
+   
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
@@ -22,8 +24,11 @@ class MenuButton extends StatelessWidget {
         const PopupMenuItem(
           child: Text("Pagamentos"),
         ),
-        const PopupMenuItem(
-          child: Text("Configurações"),
+        PopupMenuItem(
+          onTap: (){ Navigator.pop(context, MaterialPageRoute(builder: (context) => const ConfiguracaoScreen()));
+          
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const ConfiguracaoScreen()));},
+          child: const Text("Configurações"),
         ),
       ],
       
