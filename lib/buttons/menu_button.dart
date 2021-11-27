@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whats_app_flutter/buttons/add_contato.dart';
 import 'package:whats_app_flutter/screens/configura%C3%A7%C3%B5es/config_scree.dart';
 
 class MenuButton extends StatelessWidget {
@@ -55,6 +56,7 @@ class MenuButton extends StatelessWidget {
 
 void mudaPage(BuildContext context, var item){
     if(item == 0){
+      Navigator.push(context, MaterialPageRoute(builder: (context) => const AddContact()));
       print("Novo grupo");
       }
 
@@ -76,6 +78,5 @@ void mudaPage(BuildContext context, var item){
 
     else if(item == 5){
       Navigator.push(context, MaterialPageRoute(builder: (context) => const ConfiguracaoScreen()));
-      print("Config");
     }
     }

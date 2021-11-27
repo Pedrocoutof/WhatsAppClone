@@ -24,11 +24,15 @@ class _ContactsState extends State<Contacts> {
               radius: 30,
               backgroundImage: NetworkImage(listaDeContatos[i].perfilUrl),
             ),
+            onLongPress: (){
+                listaDeContatos.remove(listaDeContatos[i]);
+                setState(() {});
+            },
             onTap: (){
               Navigator.push(context, MaterialPageRoute (builder: (context) => ConversaScreen(contato: listaDeContatos[i])));
             },
             minVerticalPadding: 23,
-            title: Text(listaDeContatos[i].nome, style: GoogleFonts.roboto(fontSize: 17)),
+            title:    Text(listaDeContatos[i].nome, style: GoogleFonts.roboto(fontSize: 17)),
             subtitle: Text(listaDeContatos[i].ultimaMenssagem, maxLines: 1,), isThreeLine: true,
             trailing: Text(listaDeContatos[i].horario, style: TextStyle(fontSize: 13, color: Colors.grey),),
           ),
@@ -43,4 +47,10 @@ class _ContactsState extends State<Contacts> {
       );
 
   }
+}
+
+excluiContato(ChatModel contatoParaExcluir){
+
+
+
 }
