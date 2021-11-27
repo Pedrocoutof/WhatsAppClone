@@ -40,6 +40,7 @@ class _WhatsAppState extends State<WhatsApp> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      color: colorWpp,
       themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
       title: "WhatsApp",
@@ -53,7 +54,7 @@ class _WhatsAppState extends State<WhatsApp> with SingleTickerProviderStateMixin
             IconButton(
             icon: const Icon(Icons.search),
             color: Colors.white,
-            onPressed: () {const MenuButton();},),
+            onPressed: () {MenuButton();},),
             
             const MenuButton(),
           ],

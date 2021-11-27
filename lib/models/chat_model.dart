@@ -62,7 +62,7 @@ class ChatModel{
       ChatModel(
     nome: "Pai",
     ultimaMenssagem: "Bom dia!",
-    horario: "10:42",
+    horario: "08:56",
     perfilUrl: "https://images.pexels.com/photos/1139743/pexels-photo-1139743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     ),
         ChatModel(
