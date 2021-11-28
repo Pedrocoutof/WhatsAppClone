@@ -54,12 +54,67 @@ class ConversaScreen extends StatelessWidget {
            ], 
           )
         ],
-
       ),
       
-      
+      body: Stack(children: [
+        Image.network(userModel.backgroundUrl, fit: BoxFit.cover,height: MediaQuery.of(context).size.height,width: MediaQuery.of(context).size.width,),
+        Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          color: Colors.transparent,
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                  Container(height: 50, width: 400,
+                  decoration: BoxDecoration(
+                     color: Colors.white,
+                     borderRadius: BorderRadius.circular(100),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.emoji_emotions, color: colorWpp,),
+                        hintText: "Mensagem",
+                        enabled: true,
 
-      body: Stack(
+                        suffixIcon: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                          Icon(Icons.attach_file, color: colorWpp,),
+                          Icon(Icons.camera,  color: colorWpp),
+                        ],)
+                      ),
+                    ),
+                  ),
+                  ),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: colorWpp,
+                      borderRadius: BorderRadius.circular(90)
+                    ),
+                    child: const Center(
+                      child: Icon(Icons.mic, color: Colors.white, size: 30,),
+                    ),
+                  )
+                ],),
+            ),
+            ),
+            
+          )
+      ],)
+
+    );
+  }
+}
+
+/* body: Stack(
         
         children: [
 
@@ -122,8 +177,4 @@ class ConversaScreen extends StatelessWidget {
           ),
         ],
       )
-
-
-    );
-  }
-}
+*/

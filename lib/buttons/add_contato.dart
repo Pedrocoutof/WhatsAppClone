@@ -103,7 +103,6 @@ saveContact(){
     );
   listaDeContatos.add(novoContato);
   Navigator.pop(context, (context) => Contacts());
-  print(listaDeContatos.length);
   setState(() {});
 }
 }
