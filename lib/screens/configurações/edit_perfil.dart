@@ -3,7 +3,11 @@ import 'package:whats_app_flutter/main.dart';
 import 'package:whats_app_flutter/models/user_model.dart';
 
 class EditPerfil extends StatelessWidget {
-  const EditPerfil({ Key? key }) : super(key: key);
+  EditPerfil({ Key? key }) : super(key: key);
+
+  TextEditingController controllerNome = TextEditingController();
+  TextEditingController controllerUrlFoto = TextEditingController();
+  TextEditingController controllerRecado = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +32,7 @@ class EditPerfil extends StatelessWidget {
               leading: Icon(Icons.person),
               title : Text("Nome"),
               subtitle:TextField(
+              controller: controllerNome,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: userModel.nome,
@@ -43,6 +48,7 @@ class EditPerfil extends StatelessWidget {
               title : Text("Recado"),
               subtitle:
             TextField(
+              controller: controllerRecado,
               decoration: InputDecoration(
                 hintText: userModel.statusText,
                 border: InputBorder.none,
@@ -64,9 +70,19 @@ class EditPerfil extends StatelessWidget {
               ),
             ),
             ),
-
           ],),
         ),
     );
   }
+atualizaNomeUserModel(){
+  if(controllerNome.text.isNotEmpty) {
+    userModel.nome = controllerNome.text;
+  }
+}
+atualizaRecadoUserModel(){
+  if(controllerRecado.text.isNotEmpty) {
+    userModel.statusText = controllerRecado.text;
+  }
+}
+
 }

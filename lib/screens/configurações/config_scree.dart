@@ -5,6 +5,7 @@ import 'package:whats_app_flutter/screens/configura%C3%A7%C3%B5es/edit_perfil.da
 
 const colorWpp = Color(0xFF075F56);
 
+
 class ConfiguracaoScreen extends StatelessWidget {
   const ConfiguracaoScreen({Key? key}) : super(key: key);
 
@@ -52,7 +53,9 @@ Widget perfilConfig(BuildContext context) {
             leading: CircleAvatar(radius: 35, backgroundImage: NetworkImage(userModel.perfilUrl),),
             title: Text(userModel.nome, style: TextStyle(fontSize: 21),),
             subtitle: Text(userModel.statusText, style: TextStyle(fontSize: 16), maxLines: 1),
-            trailing: const Icon(Icons.qr_code, color: colorWpp,),
+            trailing: IconButton(
+              onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => qrCorde()));},
+              icon: const Icon(Icons.qr_code, color: colorWpp,)),
           ),
         ),
       ),
@@ -124,5 +127,16 @@ Widget perfilConfig(BuildContext context) {
           isThreeLine: true,
           title: Text("From", textAlign: TextAlign.center,),
           subtitle: Text("Pedro do Couto\nInspirado no aplicativo 'WhatsApp'", textAlign: TextAlign.center,),
+    );
+  }
+
+  Scaffold qrCorde(){
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 75,
+        backgroundColor:Colors.black,
+        title: Text("QR-Code"),
+      ),
+      //body: Center(child: Image.asset("images/qrcode_github"),),
     );
   }

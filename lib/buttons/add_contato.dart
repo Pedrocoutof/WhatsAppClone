@@ -101,6 +101,7 @@ saveContact(){
     perfilUrl: fotoFinal,
     horario: horarioFinal,
     );
+    
   listaDeContatos.add(novoContato);
   Navigator.pop(context, (context) => Contacts());
   setState(() {});
