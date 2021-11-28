@@ -18,7 +18,6 @@ class _ContactsState extends State<Contacts> {
       itemCount: listaDeContatos.length,
       itemBuilder: (context, i) => Column(
         children: [
-
           ListTile(
             leading: CircleAvatar(
               radius: 30,

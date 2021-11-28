@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:whats_app_flutter/models/user_model.dart';
+import 'package:whats_app_flutter/screens/configura%C3%A7%C3%B5es/edit_perfil.dart';
 
 const colorWpp = Color(0xFF075F56);
 
@@ -18,7 +19,7 @@ class ConfiguracaoScreen extends StatelessWidget {
       body: ListView(
         scrollDirection: Axis.vertical,
         children: [
-          perfilConfig(),
+          perfilConfig(context),
           Divider(),
           conta(),
           Divider(),
@@ -39,15 +40,22 @@ class ConfiguracaoScreen extends StatelessWidget {
   }
 }
 
-Widget perfilConfig() {
-  return Padding(
-    padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-    child: ListTile(
-      leading: CircleAvatar(radius: 35, backgroundImage: NetworkImage(userModel.perfilUrl),),
-      title: Text(userModel.nome, style: TextStyle(fontSize: 20),),
-      subtitle: Text(userModel.statusText, style: TextStyle(fontSize: 14), maxLines: 1,),
-      trailing: const Icon(Icons.qr_code),
-    ),
+Widget perfilConfig(BuildContext context) {
+  return InkWell(
+    onTap: (){
+      Navigator.push(context , MaterialPageRoute(builder: (context) => EditPerfil()));
+    },
+      child: Container(
+        height: 100,
+        child: Center(
+          child: ListTile(
+            leading: CircleAvatar(radius: 35, backgroundImage: NetworkImage(userModel.perfilUrl),),
+            title: Text(userModel.nome, style: TextStyle(fontSize: 21),),
+            subtitle: Text(userModel.statusText, style: TextStyle(fontSize: 16), maxLines: 1),
+            trailing: const Icon(Icons.qr_code, color: colorWpp,),
+          ),
+        ),
+      ),
   );
 }
 
@@ -95,7 +103,7 @@ Widget perfilConfig() {
     return const Padding(
       padding: EdgeInsets.all(8.0),
       child: ListTile(
-        leading: Icon(Icons.help),
+        leading: Icon(Icons.help_outline),
         title: Text("Ajuda"),
         subtitle: Text("Central de ajuda, fale conosco, política de privacidade")),
     );

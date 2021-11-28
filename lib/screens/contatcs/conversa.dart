@@ -40,7 +40,7 @@ class ConversaScreen extends StatelessWidget {
 
         ),
         actions: [
-          IconButton(icon: const Icon(Icons.video_camera_front_sharp), onPressed: (){},),
+          IconButton(icon: const Icon(Icons.videocam), onPressed: (){},),
           IconButton(icon: const Icon(Icons.call), onPressed: (){},),
           
           PopupMenuButton(
@@ -75,12 +75,12 @@ class ConversaScreen extends StatelessWidget {
                      borderRadius: BorderRadius.circular(100),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                    padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 2),
                     child: TextFormField(
                       decoration: InputDecoration(
                         prefixIcon: Icon(Icons.emoji_emotions, color: colorWpp,),
                         hintText: "Mensagem",
-                        enabled: true,
+                        border: InputBorder.none,
 
                         suffixIcon: Row(
                           mainAxisSize: MainAxisSize.min,

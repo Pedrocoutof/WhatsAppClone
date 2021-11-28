@@ -7,9 +7,39 @@ class Status extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: [
-        ListTile(leading: CircleAvatar(
+        
+        statusUser(),
+        
+        ListTile(title: Text("Atualizações recentes", style: TextStyle(color: Colors.grey.shade600),),),
+
+
+        //LISTA DE STORIES
+        ListView.builder(
+          scrollDirection: Axis.vertical,
+          shrinkWrap: true,
+          itemCount: listaDeContatos.length,
+          itemBuilder: (context, i) => 
+          Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+            ListTile(
+              leading: CircleAvatar(backgroundImage: NetworkImage(listaDeContatos[i].perfilUrl),),
+              title: Text(listaDeContatos[i].nome),
+              
+              ),
+            Divider()
+          ],)
+          )
+        
+      ],
+    );
+  }
+}
+
+Widget statusUser(){
+      return ListTile(leading: CircleAvatar(
           radius: 30,
           backgroundImage: NetworkImage(userModel.perfilUrl),
         ),
@@ -18,11 +48,6 @@ class Status extends StatelessWidget {
         trailing: IconButton(
           onPressed: (){},
           icon: Icon(Icons.more_horiz),),
-        ),
-        
-        ListTile(subtitle: Text("Atualizações recentes"),),
-      ],
-    );
-  }
+        );
 }
 
