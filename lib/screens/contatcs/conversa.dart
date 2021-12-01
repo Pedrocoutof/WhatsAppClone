@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whats_app_flutter/models/chat_model.dart';
 import 'package:whats_app_flutter/models/user_model.dart';
+import 'package:whats_app_flutter/screens/contatcs/perfil_page.dart';
 
 
 
@@ -30,14 +31,19 @@ class ConversaScreen extends StatelessWidget {
               ],
             ),
           ),),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(contato.nome),
-            Text(contato.horario, style: const TextStyle(fontSize: 12, color: Colors.grey),),
-          ],
-
+        title: InkWell(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => PerfilPage(contato: contato,)));
+          },
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(contato.nome),
+              Text(contato.horario, style: const TextStyle(fontSize: 12, color: Colors.grey),),
+            ],
+        
+          ),
         ),
         actions: [
           IconButton(icon: const Icon(Icons.videocam), onPressed: (){},),

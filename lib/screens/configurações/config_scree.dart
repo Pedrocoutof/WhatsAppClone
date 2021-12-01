@@ -132,11 +132,17 @@ Widget perfilConfig(BuildContext context) {
 
   Scaffold qrCorde(){
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         toolbarHeight: 75,
         backgroundColor:Colors.black,
         title: Text("QR-Code"),
       ),
-      //body: Center(child: Image.asset("images/qrcode_github"),),
+      body: Center(
+        
+        child: Container(
+        height: 400,
+        width: 400,
+        child: Image.asset("assets/images/qrcode_github.png"))),
     );
   }
