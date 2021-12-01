@@ -15,7 +15,7 @@ class Chamada extends StatelessWidget {
     Column(
       children: [
         ListTile(
-          leading: CircleAvatar(backgroundImage: NetworkImage(listaDeContatos[i].perfilUrl),),
+          leading: CircleAvatar(backgroundImage: AssetImage(listaDeContatos[i].photoPerfil),),
           title: Text(listaDeContatos[i].nome),
           subtitle: Text(listaDeContatos[i].horario),
           trailing: Icon(Icons.call, color: colorWpp,),

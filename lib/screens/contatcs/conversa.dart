@@ -26,7 +26,7 @@ class ConversaScreen extends StatelessWidget {
                 const Icon(Icons.arrow_back, size: 14,),
                   CircleAvatar(
                   radius: 21,
-                  backgroundImage: NetworkImage(contato.perfilUrl),
+                  backgroundImage: AssetImage(contato.photoPerfil),
                 ),
               ],
             ),

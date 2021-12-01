@@ -50,7 +50,9 @@ Widget perfilConfig(BuildContext context) {
         height: 100,
         child: Center(
           child: ListTile(
-            leading: CircleAvatar(radius: 35, backgroundImage: NetworkImage(userModel.perfilUrl),),
+            leading: CircleAvatar(radius: 35,
+            backgroundImage: AssetImage(userModel.perfilFoto),
+            ),
             title: Text(userModel.nome, style: TextStyle(fontSize: 21),),
             subtitle: Text(userModel.statusText, style: TextStyle(fontSize: 16), maxLines: 1),
             trailing: IconButton(

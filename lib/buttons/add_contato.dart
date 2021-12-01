@@ -98,7 +98,7 @@ saveContact(){
   ChatModel novoContato = ChatModel(
     nome: nomeFinal,
     ultimaMenssagem: ultimaMensagemFinal,
-    perfilUrl: fotoFinal,
+    photoPerfil: fotoFinal,
     horario: horarioFinal,
     );
     

@@ -25,7 +25,7 @@ class Status extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             children: [
             ListTile(
-              leading: CircleAvatar(backgroundImage: NetworkImage(listaDeContatos[i].perfilUrl),),
+              leading: CircleAvatar(backgroundImage: AssetImage(listaDeContatos[i].photoPerfil),),
               title: Text(listaDeContatos[i].nome),
               
               ),
@@ -41,7 +41,7 @@ class Status extends StatelessWidget {
 Widget statusUser(){
       return ListTile(leading: CircleAvatar(
           radius: 30,
-          backgroundImage: NetworkImage(userModel.perfilUrl),
+          backgroundImage: AssetImage(userModel.perfilFoto),
         ),
         title: Text("Meu Status"),
         subtitle: Text("Agora mesmo."),

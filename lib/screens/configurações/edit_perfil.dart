@@ -24,7 +24,9 @@ class EditPerfil extends StatelessWidget {
 
             InkWell(
               onTap: (){print("Clicou");},
-              child: CircleAvatar(backgroundImage: NetworkImage(userModel.perfilUrl), radius: 75,),
+              child: CircleAvatar(
+                backgroundImage: AssetImage(userModel.perfilFoto),
+                radius: 75,),
               ),
 
             // NOME

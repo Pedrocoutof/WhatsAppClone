@@ -12,7 +12,7 @@ class PerfilPage extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            flexibleSpace: Image.network(contato.perfilUrl, fit: BoxFit.cover),
+            flexibleSpace: Image.asset(contato.photoPerfil),
             expandedHeight: 400,
             toolbarHeight: 75,
             backgroundColor: colorWpp,

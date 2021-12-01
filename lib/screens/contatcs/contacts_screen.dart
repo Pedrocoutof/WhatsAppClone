@@ -21,7 +21,7 @@ class _ContactsState extends State<Contacts> {
           ListTile(
             leading: CircleAvatar(
               radius: 30,
-              backgroundImage: NetworkImage(listaDeContatos[i].perfilUrl),
+              backgroundImage: AssetImage(listaDeContatos[i].photoPerfil),
             ),
             onLongPress: (){
                 listaDeContatos.remove(listaDeContatos[i]);
