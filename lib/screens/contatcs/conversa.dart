@@ -19,7 +19,9 @@ class ConversaScreen extends StatelessWidget {
         toolbarHeight: 75,
         backgroundColor: colorWpp,
         leading: InkWell(
-          onTap: (){ Navigator.pop(context);},
+          onTap: (){
+            Navigator.pop(context);
+            },
           child: Center(
             child: Row(
               children: [

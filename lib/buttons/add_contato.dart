@@ -100,6 +100,8 @@ saveContact(){
     ultimaMenssagem: ultimaMensagemFinal,
     photoPerfil: fotoFinal,
     horario: horarioFinal,
+    numero: "+55 00 11111 - 1111",
+    recado: "Hey there! I am using Whatsapp",
     );
     
   listaDeContatos.add(novoContato);

@@ -4,8 +4,9 @@ class ChatModel{
   late final String horario;
   late final String photoPerfil;
   late final String recado;
+  late final String numero;
 
-  ChatModel({required this.nome, required this.ultimaMenssagem, required this.horario, required this.photoPerfil, recado});
+  ChatModel({required this.nome, required this.ultimaMenssagem, required this.horario, required this.photoPerfil, required this.numero, required this.recado});
 
 }
 
@@ -16,6 +17,7 @@ class ChatModel{
     horario: "10:42",
     photoPerfil: "assets/images/perfilContatos/contato1.jpeg",
     recado: "Hey there! I am using Whatsapp",
+    numero: "+55 00 11111 - 1111"
     ),
 
         ChatModel(
@@ -24,6 +26,7 @@ class ChatModel{
     horario: "10:42",
     photoPerfil: "assets/images/perfilContatos/contato1.jpeg",
     recado: "Hey there! I am using Whatsapp",
+    numero: "+55 00 11111 - 1111"
     ),   
 
         ChatModel(
@@ -32,6 +35,7 @@ class ChatModel{
     horario: "10:42",
     photoPerfil: "assets/images/perfilContatos/contato1.jpeg",
     recado: "Hey there! I am using Whatsapp",
+    numero: "+55 00 11111 - 1111"
     ),
         ChatModel(
     nome: "Tia",
@@ -39,6 +43,7 @@ class ChatModel{
     horario: "10:42",
     photoPerfil: "assets/images/perfilContatos/contato1.jpeg",
     recado: "Hey there! I am using Whatsapp",
+    numero: "+55 00 11111 - 1111"
     ),
         ChatModel(
     nome: "Marcos",
@@ -46,6 +51,7 @@ class ChatModel{
     horario: "10:42",
     photoPerfil: "assets/images/perfilContatos/contato1.jpeg",
     recado: "Hey there! I am using Whatsapp",
+    numero: "+55 00 11111 - 1111"
     ),
         ChatModel(
     nome: "João Victor",
@@ -53,6 +59,7 @@ class ChatModel{
     horario: "10:42",
     photoPerfil: "assets/images/perfilContatos/contato1.jpeg",
     recado: "Hey there! I am using Whatsapp",
+    numero: "+55 00 11111 - 1111"
     ),   
         ChatModel(
     nome: "Leandro",
@@ -60,6 +67,7 @@ class ChatModel{
     horario: "10:42",
     photoPerfil: "assets/images/perfilContatos/contato1.jpeg",
     recado: "Hey there! I am using Whatsapp",
+    numero: "+55 00 11111 - 1111"
     ),
         ChatModel(
     nome: "Grupo da Família",
@@ -67,6 +75,7 @@ class ChatModel{
     horario: "10:42",
     photoPerfil: "assets/images/perfilContatos/contato1.jpeg",
     recado: "Hey there! I am using Whatsapp",
+    numero: "+55 00 11111 - 1111"
     ),    
       ChatModel(
     nome: "Pai",
@@ -74,6 +83,7 @@ class ChatModel{
     horario: "08:56",
     photoPerfil: "assets/images/perfilContatos/contato1.jpeg",
     recado: "Hey there! I am using Whatsapp",
+    numero: "+55 00 11111 - 1111"
     ),
         ChatModel(
     nome: "+00 00 00000-0000",
@@ -81,6 +91,7 @@ class ChatModel{
     horario: "10:42",
     photoPerfil: "assets/images/perfilContatos/contato1.jpeg",
     recado: "Hey there! I am using Whatsapp",
+    numero: "+55 00 11111 - 1111"
     ),   
         ChatModel(
     nome: "Miguel",
@@ -88,6 +99,7 @@ class ChatModel{
     horario: "10:42",
     photoPerfil: "assets/images/perfilContatos/contato1.jpeg",
     recado: "Hey there! I am using Whatsapp",
+    numero: "+55 00 11111 - 1111"
     ),
         ChatModel(
     nome: "Laura",
@@ -95,6 +107,7 @@ class ChatModel{
     horario: "10:42",
     photoPerfil: "assets/images/perfilContatos/contato1.jpeg",
     recado: "Hey there! I am using Whatsapp",
+    numero: "+55 00 11111 - 1111"
     ),
   ];
   
