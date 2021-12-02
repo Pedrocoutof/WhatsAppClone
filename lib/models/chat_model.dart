@@ -94,7 +94,7 @@ class ChatModel{
     numero: "+55 00 11111 - 1111"
     ),   
         ChatModel(
-    nome: "Julia",
+    nome: "Júlia",
     ultimaMenssagem: "Bom dia!",
     horario: "10:42",
     photoPerfil: "assets/images/perfilContatos/contato10.jpeg",

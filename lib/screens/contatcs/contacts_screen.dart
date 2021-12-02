@@ -33,7 +33,12 @@ class _ContactsState extends State<Contacts> {
             minVerticalPadding: 23,
             title:    Text(listaDeContatos[i].nome, style: GoogleFonts.roboto(fontSize: 17)),
             subtitle: Text(listaDeContatos[i].ultimaMenssagem, maxLines: 1,), isThreeLine: true,
-            trailing: Text(listaDeContatos[i].horario, style: TextStyle(fontSize: 13, color: Colors.grey),),
+            trailing: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+              Text(listaDeContatos[i].horario, style: TextStyle(fontSize: 13, color: Colors.grey),),
+              const Icon(Icons.check,)
+            ],)
           ),
           
           const Divider(
