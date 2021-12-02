@@ -64,8 +64,9 @@ class ConversaScreen extends StatelessWidget {
         ],
       ),
       
-      body: Stack(children: [
-        Image.network(userModel.backgroundUrl, fit: BoxFit.cover,height: MediaQuery.of(context).size.height,width: MediaQuery.of(context).size.width,),
+      body: Stack(
+        children: [
+          Positioned.fill(child:Image.asset(userModel.background, fit: BoxFit.fitHeight,),),
         Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,

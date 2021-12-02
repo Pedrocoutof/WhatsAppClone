@@ -21,7 +21,7 @@ class _PerfilPageState extends State<PerfilPage> {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            flexibleSpace: Image.asset(widget.contato.photoPerfil),
+            flexibleSpace: Image.asset(widget.contato.photoPerfil, fit: BoxFit.fitWidth,),
             expandedHeight: 400,
             toolbarHeight: 75,
             backgroundColor: colorWpp,
@@ -43,26 +43,29 @@ class _PerfilPageState extends State<PerfilPage> {
 
             Divider(),
 
-            Padding(padding: EdgeInsets.only(bottom: 8.0),
+            Padding(padding: EdgeInsets.only(bottom: 10.0),
             child: silenciaNotificacoes(),),
 
-            Padding(padding: EdgeInsets.only(bottom: 8.0),
+            Padding(padding: EdgeInsets.only(bottom: 10.0),
             child: ListTile(title: Text("Visibilidade da mídia"),)),
 
-            Padding(padding: EdgeInsets.only(bottom: 8.0),
+            Padding(padding: EdgeInsets.only(bottom: 10.0),
             child: mensagensTemporarias(),),
 
-            Padding(padding: EdgeInsets.only(bottom: 8.0),
+            Padding(padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+            child: criptografia(),),
+
+            Padding(padding: EdgeInsets.only(bottom: 10.0),
             child: recado(widget.contato),),
 
-            Padding(padding: EdgeInsets.only(bottom: 8.0),
+            Padding(padding: EdgeInsets.only(bottom: 10.0),
             child: numero(widget.contato),),
 
 
-            Padding(padding: EdgeInsets.only(bottom: 10.0),
+            Padding(padding: EdgeInsets.only(top: 20, bottom: 10.0),
             child: bloquear(),),
 
-            Padding(padding: EdgeInsets.only(bottom: 10.0),
+            Padding(padding: EdgeInsets.only(bottom: 20.0),
             child: denunciar(),),
 
 
@@ -78,7 +81,7 @@ class _PerfilPageState extends State<PerfilPage> {
 
 Container midiaLinksDocs(){
   return Container(
-                height: 100,
+                height: 125,
                 color: Colors.grey.shade100,
                 child: ListTile(leading: Text("Mídia, Links e docs"),
                 trailing: Text(listaDeContatos.length.toString()),
@@ -118,7 +121,8 @@ ListTile mensagensTemporarias(){
     return const ListTile(
       title: Text("Criptografia"),
       subtitle: Text("As mensagens e as chamadas são protegidas com a criptografia de ponta a ponta. Toque para confirmar."),
-      trailing: Icon(Icons.lock, color: colorWpp,),
+      trailing: Padding(padding: EdgeInsets.only(right: 13),
+      child: Icon(Icons.lock, color: colorWpp,),),
     );
 }
 
@@ -132,7 +136,8 @@ ListTile recado(ChatModel contato){
 ListTile numero(ChatModel contato){
   return ListTile(
     title: Text(contato.numero),
-    trailing: Icon(Icons.call, color: colorWpp,),
+      trailing: Padding(padding: EdgeInsets.only(right: 13),
+      child: Icon(Icons.call, color: colorWpp,),),
   );
 }
 
