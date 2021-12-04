@@ -1,8 +1,5 @@
 # whats_app_flutter
-
-<img image1 = "readme/1.png" width="100" height="100">
-
-![](image1)
+![](readme/1.png)
 A new Flutter project.
 
 ## Getting Started
